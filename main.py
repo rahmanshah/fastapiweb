@@ -9,7 +9,12 @@ app = fastapi.FastAPI()
 
 @app.get('/')
 def index():
-    return "Hello World!"
+    content = """
+    <h1>Hello FastAPI Web App</h1>
+    <div>Here will our code will live</div>
+    """
+    resp = fastapi.responses.HTMLResponse(content)
+    return resp
 
 #step 3 - to run our API when we want to run locally
 
